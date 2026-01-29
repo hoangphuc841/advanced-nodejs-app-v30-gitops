@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: advanced-nodejs-app-v30
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: advanced-nodejs-app-v30
+  template:
+    metadata:
+      labels:
+        app: advanced-nodejs-app-v30
+    spec:
+      containers:
+        - name: app
+          image: hoangphuc842/advanced-nodejs-app-v30:@sha256:e62cd52a860729bf2adc66c288d3a2c3807dcdaf5b1fbcb10c278a1a946e1709
+          ports:
+            - containerPort: 8080
